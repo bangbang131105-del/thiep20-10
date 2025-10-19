@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thiệp Chúc Mừng 20-10</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #ffe6ef, #fff3f8, #ffeef6);
+    position: relative;
+  }
+
+  /* Khung thiệp */
+  .card {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 25px;
+    border: 2px solid #ffb6d1;
+    padding: 50px 60px;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(255, 105, 180, 0.25);
+    animation: fadeIn 2s ease;
+  }
+
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8em;
+    color: #ff4f9a;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 100, 150, 0.3);
+  }
+
+  p {
+    font-size: 1.25em;
+    color: #ff5f93;
+    line-height: 1.9em;
+    font-weight: 500;
+  }
+
+  /* Fade in chữ */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Các hiệu ứng nền */
+  .butterfly, .heart, .leaf, .flower {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes flyButterfly {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.7; }
+    50% { transform: translateY(-150px) translateX(80px) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(-300px) translateX(160px) rotate(90deg); opacity: 0; }
+  }
+
+  @keyframes floatHeart {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    100% { transform: translateY(-800px) scale(1.3); opacity: 0; }
+  }
+
+  @keyframes fallLeaf {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(850px) rotate(360deg); opacity: 0; }
+  }
+
+  @keyframes growFlower {
+    0% { transform: translateY(100px) scale(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>💐 Chúc Mừng Ngày Phụ Nữ Việt Nam 20-10 💐</h1>
+    <p>
+      Gửi đến những bông hoa tươi tắn nhất của lớp chúng ta 🌸<br>
+      Chúc các bạn nữ luôn xinh đẹp, tự tin, học giỏi và tràn đầy niềm vui.<br>
+      Mong rằng 20-10 này sẽ thật ngọt ngào, nhiều tiếng cười và kỷ niệm đáng nhớ 💖✨
+    </p>
+  </div>
+
+  <script>
+    // 🦋 Bướm bay tự nhiên
+    function createButterfly() {
+      const b = document.createElement('div');
+      b.className = 'butterfly';
+      b.innerHTML = '🦋';
+      b.style.left = Math.random() * window.innerWidth + 'px';
+      b.style.bottom = '0px';
+      b.style.fontSize = (20 + Math.random() * 25) + 'px';
+      b.style.animation = `flyButterfly ${7 + Math.random() * 5}s ease-in-out forwards`;
+      document.body.appendChild(b);
+      setTimeout(() => b.remove(), 12000);
+    }
+
+    // 💖 Tim bay chậm rãi
+    function createHeart() {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.innerHTML = '💖';
+      h.style.left = Math.random() * window.innerWidth + 'px';
+      h.style.bottom = '0px';
+      h.style.fontSize = (16 + Math.random() * 20) + 'px';
+      h.style.animation = `floatHeart ${6 + Math.random() * 4}s ease-in-out forwards`;
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 9000);
+    }
+
+    // 🍃 Lá rơi tự nhiên
+    function createLeaf() {
+      const l = document.createElement('div');
+      l.className = 'leaf';
+      l.innerHTML = '🍃';
+      l.style.left = Math.random() * window.innerWidth + 'px';
+      l.style.top = '-20px';
+      l.style.fontSize = (14 + Math.random() * 20) + 'px';
+      l.style.animation = `fallLeaf ${8 + Math.random() * 5}s linear forwards`;
+      document.body.appendChild(l);
+      setTimeout(() => l.remove(), 12000);
+    }
+
+    // 🌸 Cánh hoa mọc lên
+    function createFlower() {
+      const f = document.createElement('div');
+      f.className = 'flower';
+      f.innerHTML = '🌸';
+      f.style.left = Math.random() * window.innerWidth + 'px';
+      f.style.bottom = '0px';
+      f.style.fontSize = (18 + Math.random() * 25) + 'px';
+      f.style.animation = `growFlower ${3 + Math.random() * 2}s ease-out forwards`;
+      document.body.appendChild(f);
+      setTimeout(() => f.remove(), 6000);
+    }
+
+    // Gọi các hiệu ứng xen kẽ
+    setInterval(createButterfly, 2500);
+    setInterval(createHeart, 1500);
+    setInterval(createLeaf, 2000);
+    setInterval(createFlower, 1800);
+  </script>
+</body>
+</html>
